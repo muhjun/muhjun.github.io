@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
-    box-sizing: border-box;
 }
 
 html,
@@ -11,7 +11,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
-    background: lightskyblue;
+    background-image: url(https://i.ibb.co/qmFJjYL/1.jpg);
+    background-size: cover;
 }
 
 
@@ -23,7 +24,7 @@ body {
 
 nav {
     background: transparent;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid white;
 }
 
 nav:after {
@@ -34,7 +35,7 @@ nav:after {
 
 nav .logo {
     float: left;
-    color: black;
+    color: white;
     font-size: 40px;
     line-height: 50px;
     padding-left: 20px;
@@ -56,7 +57,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(0, 0, 0);
+    color: white;
     text-decoration: none;
     line-height: 50px;
     font-size: 18px;
@@ -123,15 +124,18 @@ input {
         margin-right: 0px;
         float: left;
     }
+
     nav .logo {
         padding-left: 20px;
         width: 100%;
     }
+
     nav ul li,
     nav ul ul li {
         display: block;
         width: 100%;
     }
+
     nav ul ul {
         top: 70px;
         position: static;
@@ -141,43 +145,120 @@ input {
         opacity: 1;
         visibility: visible;
     }
+
     nav ul ul ul {
         position: static;
     }
+
     nav ul ul a {
         padding-left: 40px;
     }
+
     .show {
         display: block;
-        color: black;
+        color: white;
         font-size: 18px;
         padding: 0 20px;
         line-height: 70px;
         cursor: pointer;
     }
+
     .show:hover {
         color: cyan;
     }
+
     .icon {
         display: block;
-        color: black;
+        color: white;
         position: absolute;
         right: 40px;
         line-height: 70px;
         font-size: 25px;
         cursor: pointer;
     }
+
     nav ul li a:hover {
         box-shadow: none;
         color: cyan;
     }
-    .show+a,
+
+    .show+a, nav
     ul {
         display: none;
     }
+
     [id^=btn]:checked+ul {
         display: block;
     }
+}
+
+/* main */
+a {
+    text-decoration: none;
+}
+
+span {
+    color: lightskyblue;
+    font-weight: bold;
+}
+
+.main {
+    padding: 80px 0 50px 0;
+    /* background-image: url(https://i.ibb.co/qmFJjYL/1.jpg);
+    background-size: cover; */
+    color: white;
+    text-align: center;
+}
+
+.main h1 {
+    opacity: 1;
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+
+.main h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.main ul {
+    text-align: center;
+    font-size: 20px;
+}
+
+.main li {
+    margin-bottom: 8px;
+}
+
+.btn-wrapper {
+    margin: 50px 0;
+}
+
+.btn-wrapper p {
+    margin: 10px 0;
+}
+
+.seemore {
+    background-color: lightskyblue;
+    opacity: 0.8;
+}
+
+
+.btn {
+    padding: 12px 24px;
+    color: white;
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.fa {
+    margin-right: 5px;
+    color: white;
 }
 
 
@@ -197,7 +278,7 @@ input {
     background: white;
     border-radius: 15px;
     box-shadow: 0 10px 50px cyan;
-    top: 175px;
+    top: -50px;
 }
 
 .card .inner-part {
@@ -316,8 +397,8 @@ input {
 
 .sliders {
     position: absolute;
-    bottom: 25px;
-    left: 65%;
+    bottom: 5px;
+    left: 50%;
     z-index: 100;
     transform: translateX(-50%);
 }
@@ -374,17 +455,18 @@ input {
 .footer {
     background: transparent;
     color: white;
-    height: 200px;
+
 }
 
 .footer .footer-bottom {
     background: black;
     color: white;
-    height: 40px;
+    height: 20px;
     width: 100%;
     text-align: center;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: auto;
     left: 0px;
     padding-top: 10px;
 }
+

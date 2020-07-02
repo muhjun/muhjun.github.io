@@ -11,12 +11,24 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Josefin Sans', sans-serif;
-    background-image: url(https://i.ibb.co/qmFJjYL/1.jpg);
-    background-size: cover;
+    background: lightskyblue;
 }
+
+.clear {
+    clear: left;
+  }
 
 
 /* header */
+header {
+    height: 60px;
+    width: 100%;
+    background-color: lightskyblue;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    opacity: 0.8;
+}
 
 .page-wrapper {
     height: 100px;
@@ -24,7 +36,7 @@ body {
 
 nav {
     background: transparent;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid black;
 }
 
 nav:after {
@@ -35,7 +47,7 @@ nav:after {
 
 nav .logo {
     float: left;
-    color: white;
+    color: black;
     font-size: 40px;
     line-height: 50px;
     padding-left: 20px;
@@ -47,6 +59,7 @@ nav ul {
     list-style: none;
     margin-right: 40px;
     position: relative;
+    background-color: lightskyblue;
 }
 
 nav ul li {
@@ -57,7 +70,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     line-height: 50px;
     font-size: 18px;
@@ -113,6 +126,7 @@ nav ul ul ul li {
 
 /* responsif header */
 
+
 .show,
 .icon,
 input {
@@ -156,7 +170,7 @@ input {
 
     .show {
         display: block;
-        color: white;
+        color: black;
         font-size: 18px;
         padding: 0 20px;
         line-height: 70px;
@@ -169,7 +183,7 @@ input {
 
     .icon {
         display: block;
-        color: white;
+        color: black;
         position: absolute;
         right: 40px;
         line-height: 70px;
@@ -182,7 +196,7 @@ input {
         color: cyan;
     }
 
-    .show+a, nav
+    .show+a,
     ul {
         display: none;
     }
@@ -203,9 +217,9 @@ span {
 }
 
 .main {
-    padding: 80px 0 50px 0;
-    /* background-image: url(https://i.ibb.co/qmFJjYL/1.jpg);
-    background-size: cover; */
+    padding: 200px 0 50px 0;
+    background-image: url(https://i.ibb.co/7Cdx6Xw/1-min.jpg);
+    background-size: cover;
     color: white;
     text-align: center;
 }
@@ -263,210 +277,62 @@ span {
 
 
 /* card profile */
-
-.banner {
-    height: 60px;
-    border: 1px solid;
+img {
+    height: 60%;
+    width: 60%;
 }
 
-.card {
+.person-wrapper {
+    padding-bottom: 80px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+.person {
+    float: left;
+    width: 33.33%;
+}
+
+.person-icon {
     position: relative;
-    height: 350px;
-    width: 95%;
-    max-width: 750px;
-    margin: auto;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 50px cyan;
-    top: -50px;
+    display: inline-block;
 }
 
-.card .inner-part {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 25px;
-    height: 360px;
-    position: absolute;
-}
-
-#tapImg:checked~.inner-part {
-    padding: 0;
-    transition: .1s ease-in;
-}
-
-.inner-part .img {
-    height: 260px;
-    width: 260px;
-    overflow: hidden;
-    flex-shrink: 0;
-    border-radius: 20px;
-    box-shadow: 2px 3px 15px cyan;
-}
-
-#tapImg:checked~.inner-part .img {
-    height: 370px;
-    width: 850px;
-    z-index: 99;
-    margin-top: 10px;
-    transition: .3s .2s ease-in;
-}
-
-.img img {
-    height: 100%;
+.person-icon p {
+    padding-top: 10px;
     width: 100%;
-    object-fit: cover;
-    cursor: pointer;
-    opacity: 0;
-    transition: .6s;
-}
-
-#tap-1:checked~.inner-part .img-1,
-#tap-2:checked~.inner-part .img-2,
-#tap-3:checked~.inner-part .img-3,
-#tap-4:checked~.inner-part .img-4,
-#tap-5:checked~.inner-part .img-5 {
-    opacity: 1;
-    transition-delay: .2s;
-}
-
-.content {
-    padding: 0 20px 0 35px;
-    width: 530px;
-    margin-left: 50px;
-    opacity: 0;
-}
-
-#tapImg:checked~.inner-part .content {
-    display: none;
-}
-
-#tap-1:checked~.inner-part .content-1,
-#tap-2:checked~.inner-part .content-2,
-#tap-3:checked~.inner-part .content-3,
-#tap-4:checked~.inner-part .content-4,
-#tap-5:checked~.inner-part .content-5 {
-    opacity: 1;
-    margin-left: 0px;
-    z-index: 100;
-    transition-delay: .3s;
-}
-
-.content span {
-    display: block;
-    color: #7b7992;
-    margin-bottom: 15px;
-    font-size: 22px;
+    color: black;
     font-weight: bold;
+    font-size: 24px;
 }
 
-.content .title {
-    font-size: 30px;
-    font-weight: 700;
-    color: #0d0925;
-    margin-bottom: 20px;
-}
-
-.content .text {
-    font-size: 19px;
-    color: #4e4a67;
-    margin-bottom: 30px;
-    line-height: 1.5em;
-    text-align: justify;
-}
-
-.content button {
-    display: inline-flex;
-    padding: 15px;
-    border: none;
+.text-contents {
+    width: 80%;
+    display: inline-block;
+    margin-top: 15px;
     font-size: 16px;
-    text-transform: uppercase;
-    color: #fff0e6;
-    font-weight: 600;
-    letter-spacing: 1px;
-    border-radius: 50px;
-    border: 1px solid cyan;
-    cursor: pointer;
-    outline: none;
-    background: linear-gradient(147deg, #39f7fe 0%, #38d6fd 74%);
+    color: black;
+    margin-bottom: 20px;
+    
 }
 
-.content button:hover {
-    background: linear-gradient(147deg, #39f7fe 0%, #38d6fd 74%);
+.heading {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: black;
 }
 
-.sliders {
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    z-index: 100;
-    transform: translateX(-50%);
-}
-
-.sliders .tap:hover {
-    background: linear-gradient(147deg, #39f7fe 0%, #38d6fd 74%);
-}
-
-#tapImg:checked~.sliders {
-    display: none;
-}
-
-.sliders .tap {
-    position: relative;
-    height: 10px;
-    width: 25px;
-    background: #d9d9d9;
-    border-radius: 5px;
-    display: inline-flex;
-    margin: 0 3px;
-    cursor: pointer;
-}
-
-.sliders .tap:before {
-    position: absolute;
-    counter-reset: '';
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(147deg, #39f7fe 0%, #38d6fd 74%);
-    border-radius: 10px;
-    transform: scaleX(0);
-    transition: transform .3s;
-    transform-origin: left;
-}
-
-#tap-1:checked~.sliders .tap-1:before,
-#tap-1:checked~.sliders .tap-2:before,
-#tap-1:checked~.sliders .tap-3:before,
-#tap-1:checked~.sliders .tap-4:before,
-#tap-1:checked~.sliders .tap-5:before {
-    transform: scaleX(1);
-    width: 100%;
-}
-
-input {
-    display: none;
+.heading h1 {
+    color: black;
 }
 
 
 /* footer */
-
-.footer {
-    background: transparent;
+footer .container {
+    background-color: black;
     color: white;
-
-}
-
-.footer .footer-bottom {
-    background: black;
-    color: white;
-    height: 20px;
-    width: 100%;
     text-align: center;
-    position: relative;
-    bottom: auto;
-    left: 0px;
-    padding-top: 10px;
+    font-size: 20px;
+    padding: 10px;
 }
-

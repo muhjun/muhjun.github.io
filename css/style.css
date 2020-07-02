@@ -78,7 +78,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+    box-shadow: 0 0 5px white, 0 0 5px white;
 }
 
 nav ul ul li a:hover {
@@ -277,11 +277,6 @@ span {
 
 
 /* card profile */
-img {
-    height: 60%;
-    width: 60%;
-}
-
 .person-wrapper {
     padding-bottom: 80px;
     padding-left: 5%;
@@ -313,7 +308,7 @@ img {
     margin-top: 15px;
     font-size: 16px;
     color: black;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     
 }
 

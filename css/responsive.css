@@ -81,7 +81,7 @@
 
     .person {
         width: 50%;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
     .top-wrapper h1 {
@@ -208,5 +208,9 @@
     .top-wrapper p {
         font-size: 14px;
         line-height: 20px;
+    }
+
+    .main h1 {
+        font-size: 50px;
     }
 }

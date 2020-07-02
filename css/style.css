@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background: lightskyblue;
+}
+
+
+/* header */
+
+.page-wrapper {
+    height: 100px;
+}
+
+nav {
+    background: transparent;
+    border-bottom: 3px solid black;
+}
+
+nav:after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav .logo {
+    float: left;
+    color: black;
+    font-size: 40px;
+    line-height: 50px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+
+nav ul li {
+    float: left;
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+
+nav ul li a:hover {
+    box-shadow: 0 0 5px #33ffff, 0 0 5px #66ffff;
+}
+
+nav ul ul li a:hover {
+    color: cyan;
+    box-shadow: none;
+}
+
+nav ul ul {
+    position: absolute;
+    top: 50px;
+    border-top: 3px solid cyan;
+    opacity: 0;
+    visibility: hidden;
+    transition: top .3s;
+}
+
+nav ul ul ul {
+    border-top: none;
+}
+
+nav ul li:hover>ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul ul li {
+    position: relative;
+    margin: 0px;
+    width: 140px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+nav ul ul li a {
+    line-height: 50px;
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -70px;
+    left: 150px;
+}
+
+
+/* responsif header */
+
+.show,
+.icon,
+input {
+    display: none;
+}
+
+@media all and (max-width: 968px) {
+    nav ul {
+        margin-right: 0px;
+        float: left;
+    }
+    nav .logo {
+        padding-left: 20px;
+        width: 100%;
+    }
+    nav ul li,
+    nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+    nav ul ul {
+        top: 70px;
+        position: static;
+        border-top: none;
+        float: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul ul ul {
+        position: static;
+    }
+    nav ul ul a {
+        padding-left: 40px;
+    }
+    .show {
+        display: block;
+        color: black;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+    .show:hover {
+        color: cyan;
+    }
+    .icon {
+        display: block;
+        color: black;
+        position: absolute;
+        right: 40px;
+        line-height: 70px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+    nav ul li a:hover {
+        box-shadow: none;
+        color: cyan;
+    }
+    .show+a,
+    ul {
+        display: none;
+    }
+    [id^=btn]:checked+ul {
+        display: block;
+    }
+}
+
+
+/* card profile */
+
+.banner {
+    height: 60px;
+    border: 1px solid;
+}
+
+.card {
+    position: relative;
+    height: 350px;
+    width: 95%;
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px cyan;
+    top: 175px;
+}
+
+.card .inner-part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+    height: 360px;
+    position: absolute;
+}
+
+#tapImg:checked~.inner-part {
+    padding: 0;
+    transition: .1s ease-in;
+}
+
+.inner-part .img {
+    height: 260px;
+    width: 260px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 20px;
+    box-shadow: 2px 3px 15px cyan;
+}
+
+#tapImg:checked~.inner-part .img {
+    height: 370px;
+    width: 850px;
+    z-index: 99;
+    margin-top: 10px;
+    transition: .3s .2s ease-in;
+}
+
+.img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0;
+    transition: .6s;
+}
+
+#tap-1:checked~.inner-part .img-1,
+#tap-2:checked~.inner-part .img-2,
+#tap-3:checked~.inner-part .img-3,
+#tap-4:checked~.inner-part .img-4,
+#tap-5:checked~.inner-part .img-5 {
+    opacity: 1;
+    transition-delay: .2s;
+}
+
+.content {
+    padding: 0 20px 0 35px;
+    width: 530px;
+    margin-left: 50px;
+    opacity: 0;
+}
+
+#tapImg:checked~.inner-part .content {
+    display: none;
+}
+
+#tap-1:checked~.inner-part .content-1,
+#tap-2:checked~.inner-part .content-2,
+#tap-3:checked~.inner-part .content-3,
+#tap-4:checked~.inner-part .content-4,
+#tap-5:checked~.inner-part .content-5 {
+    opacity: 1;
+    margin-left: 0px;
+    z-index: 100;
+    transition-delay: .3s;
+}
+
+.content span {
+    display: block;
+    color: #7b7992;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.content .title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0d0925;
+    margin-bottom: 20px;
+}
+
+.content .text {
+    font-size: 19px;
+    color: #4e4a67;
+    margin-bottom: 30px;
+    line-height: 1.5em;
+    text-align: justify;
+}
+
+.content button {
+    display: inline-flex;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff0e6;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    border: 1px solid cyan;
+    cursor: pointer;
+    outline: none;
+    background: linear-gradient(147deg, #39f7fe 0%, #38d6fd 74%);
+}
+
+.content button:hover {
+    background: linear-gradient(147deg, #39f7fe 0%, #38d6fd 74%);
+}
+
+.sliders {
+    position: absolute;
+    bottom: 25px;
+    left: 65%;
+    z-index: 100;
+    transform: translateX(-50%);
+}
+
+.sliders .tap:hover {
+    background: linear-gradient(147deg, #39f7fe 0%, #38d6fd 74%);
+}
+
+#tapImg:checked~.sliders {
+    display: none;
+}
+
+.sliders .tap {
+    position: relative;
+    height: 10px;
+    width: 25px;
+    background: #d9d9d9;
+    border-radius: 5px;
+    display: inline-flex;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.sliders .tap:before {
+    position: absolute;
+    counter-reset: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(147deg, #39f7fe 0%, #38d6fd 74%);
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: transform .3s;
+    transform-origin: left;
+}
+
+#tap-1:checked~.sliders .tap-1:before,
+#tap-1:checked~.sliders .tap-2:before,
+#tap-1:checked~.sliders .tap-3:before,
+#tap-1:checked~.sliders .tap-4:before,
+#tap-1:checked~.sliders .tap-5:before {
+    transform: scaleX(1);
+    width: 100%;
+}
+
+input {
+    display: none;
+}
+
+
+/* footer */
+
+.footer {
+    background: transparent;
+    color: white;
+    height: 200px;
+}
+
+.footer .footer-bottom {
+    background: black;
+    color: white;
+    height: 20px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    padding-top: 10px;
+}
